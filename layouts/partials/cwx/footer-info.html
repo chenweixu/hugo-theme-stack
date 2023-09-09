@@ -1,0 +1,13 @@
+
+<!-- 统计文字数量 -->
+{{$scratch := newScratch}}
+{{ range (where .Site.Pages "Kind" "page" )}}
+    {{$scratch.Add "total" .WordCount}}
+{{ end }}
+
+| 本站当前共 {{ len (where .Site.RegularPages "Section" "post") }} 篇文章 | 共 {{$scratch.Get "total" }} 字 </br><span><p>
+
+<!-- 备案 -->
+{{ if .Site.Params.beian }}
+<a rel="nofollow" target="_blank" href="https://beian.miit.gov.cn/">{{.Site.Params.beian}}</a>
+{{ end }}

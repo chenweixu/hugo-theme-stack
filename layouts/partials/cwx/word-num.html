@@ -1,0 +1,9 @@
+<!-- 显示文字数量 -->
+{{ if .Site.Params.charNum }}
+    <div>
+        {{ partial "helper/icon" "book" }}
+        <time class="article-words">
+            {{ .WordCount }}字
+        </time>
+    </div>
+{{ end }}
