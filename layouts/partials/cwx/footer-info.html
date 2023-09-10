@@ -11,3 +11,8 @@
 {{ if .Site.Params.beian }}
 <a rel="nofollow" target="_blank" href="https://beian.miit.gov.cn/">{{.Site.Params.beian}}</a>
 {{ end }}
+
+<!-- 显示网站运行时间 -->
+{{ if .Site.Params.siteRunTime }}
+| 站点已运行 <span id="site-run-time"></span>
+{{ end }}

@@ -1,0 +1,21 @@
+<script>
+
+    // 显示网站运行时间
+    function ShowRunTime() {
+        var startDateString = '2019-03-21';
+        startDate = new Date(startDateString.replace(/-/g, "/"));
+
+        var NowDate = new Date();
+        var RunDateM = parseInt(NowDate - startDate);
+        var RunDays = Math.floor(RunDateM / (24 * 3600 * 1000));
+        var RunHours = Math.floor(RunDateM % (24 * 3600 * 1000) / (3600 * 1000));
+        var RunMinutes = Math.floor(RunDateM % (24 * 3600 * 1000) % (3600 * 1000) / (60 * 1000));
+        var RunSeconds = Math.round(RunDateM % (24 * 3600 * 1000) % (3600 * 1000) % (60 * 1000) / 1000);
+        var days = RunDays + "天" + RunHours + "时" + RunMinutes + "分" + RunSeconds + "秒";
+
+        document.getElementById("site-run-time").innerHTML = days;
+    }
+
+    setInterval("ShowRunTime()", 1000);
+
+</script>
